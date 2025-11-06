@@ -5,7 +5,8 @@
 
 To implement a simple hash algorithm in C to generate a hash value for a given message, demonstrating how hashing can be used for data integrity.
 
-
+## NAME: SRI MATHI S
+## REGISTER NO : 212224230272
 ## ALGORITHM:
 1.	Accept a message as input from the user.
 2.	Remove any newline character from the input message.
@@ -18,8 +19,37 @@ b.	Add the ASCII value of the current character to the hash.
 
 
 ## PROGRAM:
+```
+#include <stdio.h> 
+#include <string.h>
+// Simple hash function for demonstration 
+unsigned int simple_hash(const char *message)
+{
+unsigned int hash = 0; int 
+i;
+for (i = 0; i < strlen(message); i++)
+{
+hash = (hash * 31) + message[i]; // Using a prime number for multiplication
+}
+return hash;
+}
+int main()
+{
 
+char message[256]; 
+unsigned int hash_value;
+// Input message from user 
+printf("Enter the message to hash: "); 
+fgets(message, sizeof(message), stdin);
+message[strcspn(message, "\n")] = '\0'; // Remove newline character
+// Generate hash
+hash_value = simple_hash(message); 
+printf("Generated hash value: %u\n", hash_value);
+return 0;
+}
+```
 ## OUTPUT:
+<img width="736" height="207" alt="image" src="https://github.com/user-attachments/assets/50380650-a955-431b-a04e-3f070b2055ae" />
 
 ## RESULT:
 
